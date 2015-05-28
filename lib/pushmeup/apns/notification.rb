@@ -8,7 +8,7 @@ module APNS
         self.alert = message[:alert]
         self.badge = message[:badge]
         self.sound = message[:sound]
-        self.content_available = messafe[:content_available]
+        self.content_available = message[:content_available]
         self.other = message[:other]
       elsif message.is_a?(String)
         self.alert = message
