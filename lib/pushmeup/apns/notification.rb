@@ -1,6 +1,6 @@
 module APNS
   class Notification
-    attr_accessor :device_token, :alert, :badge, :sound, :other, :content_available
+    attr_accessor :device_token, :alert, :badge, :sound, :other, :content_available, :force_reload
     
     def initialize(device_token, message)
       self.device_token = device_token
