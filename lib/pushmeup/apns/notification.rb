@@ -9,6 +9,7 @@ module APNS
         self.badge = message[:badge]
         self.sound = message[:sound]
         self.content_available = message[:content_available]
+        self.force_reload = message[:force_reload]
         self.other = message[:other]
       elsif message.is_a?(String)
         self.alert = message
@@ -33,6 +34,7 @@ module APNS
       aps['aps']['badge'] = self.badge if self.badge
       aps['aps']['sound'] = self.sound if self.sound
       aps['aps']['content-available'] = self.content_available if self.content_available
+      aps['aps']['force-reload'] = self.force_reload if self.force_reload
       aps.merge!(self.other) if self.other
       aps.to_json.gsub(/\\u([\da-fA-F]{4})/) {|m| [$1].pack("H*").unpack("n*").pack("U*")}
     end
